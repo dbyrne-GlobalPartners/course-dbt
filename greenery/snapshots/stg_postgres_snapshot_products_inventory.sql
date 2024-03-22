@@ -7,3 +7,5 @@
     check_cols=['inventory'],
    )
 }}
+
+select * from {{source('postgres', 'products')}}

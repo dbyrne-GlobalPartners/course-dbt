@@ -1,25 +1,47 @@
 version: 2
+
 models:
   - name: stg_postgres_addresses.sql
     description: "ADDRESS TABLE FROM RAW.PUBLIC.ADDRESSES"
     
   - name: stg_postgres_events.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.EVENTS"
+    description: "Events TABLE FROM RAW.PUBLIC.EVENTS"
+    columns:
+      - name: EVENT_ID
+        tests:
+          - not_null
+          - unique
     
   - name: stg_postgres_order_items.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.ORDERS_ITEMS"
+    description: "order_items TABLE FROM RAW.PUBLIC.ORDERS_ITEMS"
+    columns:
+      - name: EVENT_ID
+        tests:
+          - not_null
+          - unique
+
     
   - name: stg_postgres_orders.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.ORDERS"
+    description: "orders TABLE FROM RAW.PUBLIC.ORDERS"
     
   - name: stg_postgres_products.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.PRODUCTS"
+    description: "Products TABLE FROM RAW.PUBLIC.PRODUCTS"
     
   - name: stg_postgres_promos.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.PROMOS"
+    description: "promos TABLE FROM RAW.PUBLIC.PROMOS"
   
   - name: stg_postgres_superheroes.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.SUPERHEROES"
+    description: "superheros TABLE FROM RAW.PUBLIC.SUPERHEROES"
+    columns:
+      - name: height
+        tests:
+          - positive_values
+      - name: weight
+        tests:
+          - positive_values
   
   - name: stg_postgres_users.sql
-    description: "ADDRESS TABLE FROM RAW.PUBLIC.USERS"
+    description: "users TABLE FROM RAW.PUBLIC.USERS"
+
+  - name: stg_postgres_addresses.sql
+    description: "addresses TABLE FROM RAW.PUBLIC.USERS"

@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  
+  - name: dim_users.sql
+    description: "contains all features of a user"
+
+  - name: fact_orders.sql
+    description: "Facts about unique orders"
+
+  - name: int_user_purchases.sql
+    description: "users with number of purchases"
+    

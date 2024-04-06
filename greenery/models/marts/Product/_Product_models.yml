@@ -11,3 +11,15 @@ models:
   - name: int_user_purchases.sql
     description: "users with number of purchases"
     
+  - name: int_conversionrate.sql
+    description: "overall session coversion rate to sales"
+
+  - name: int_product_sessions.sql
+    description: "counts of product sessions"
+
+  - name: int_aggregate_sessions.sql
+    description: "sessions with event counts"
+
+  - name: fct_Product_session.sql
+    description: "Products and details" 
+    

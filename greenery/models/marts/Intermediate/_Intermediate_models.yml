@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  
+  - name: int_session_timings.sql
+    description: "session times"

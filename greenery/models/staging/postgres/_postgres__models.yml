@@ -11,7 +11,11 @@ models:
         tests:
           - not_null
           - unique
-    
+#      - name: CREATED_AT
+#        tests:
+#          - dbt_expectations.expect_column_values_to_be_of_type:
+#            column_type: timestamp
+
   - name: stg_postgres_order_items.sql
     description: "order_items TABLE FROM RAW.PUBLIC.ORDERS_ITEMS"
     columns:
@@ -23,6 +27,10 @@ models:
     
   - name: stg_postgres_orders.sql
     description: "orders TABLE FROM RAW.PUBLIC.ORDERS"
+    columns:
+      - name: ORDER_ID
+        tests:
+          - dbt_utils.not_empty_string
     
   - name: stg_postgres_products.sql
     description: "Products TABLE FROM RAW.PUBLIC.PRODUCTS"

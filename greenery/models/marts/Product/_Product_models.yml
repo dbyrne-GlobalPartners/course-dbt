@@ -22,4 +22,7 @@ models:
 
   - name: fct_Product_session.sql
     description: "Products and details" 
+
+  - name: fct_product_funnel.sql
+    description: "Products and details" 
     
